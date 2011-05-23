@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Register extends CI_Controller {
+class Komen extends CI_Controller {
 
 	function __construct()
 	{
@@ -14,10 +14,8 @@ class Register extends CI_Controller {
 	{
 	$this->form_validation->set_rules('nama', 'Name', 'required');
 	$this->form_validation->set_rules('alamat', 'Address', 'required');
-	$this->form_validation->set_rules('username', 'Username', 'required');
-	$this->form_validation->set_rules('password', 'Password', 'required');
-	$this->form_validation->set_rules('user_display', 'User Display', 'required');
 	$this->form_validation->set_rules('email', 'E Mail', 'required');
+	$this->form_validation->set_rules('komen', 'Komen', 'required');
 
 		if ($this->form_validation->run() == FALSE){
 		
@@ -40,9 +38,9 @@ class Register extends CI_Controller {
 			$data['menu'] = "menu.php";
 		}
 			
-		$data['title'] = 'administrasi';
+		$data['title'] = 'komen';
 		$data['usernama'] = $this->session->userdata('user_display');
-		$data['main_view'] = 'indexRegister.php';
+		$data['main_view'] = 'indexKomen.php';
 		$this->load->view('index.php',$data);
 		}
 		
@@ -50,14 +48,12 @@ class Register extends CI_Controller {
 		{
 		// code buat simpan data
 		$data=array('nama'=>$this->input->post('nama'),
-					'password'=>md5($this->input->post('password')),
-					'username'=>$this->input->post('username'),
-					'user_display'=>$this->input->post('user_display'),
 					'email'=>$this->input->post('email'),
 					'alamat'=>$this->input->post('alamat')
+					'komen'=>$this->input->post('komen')
 					);
-		$this->Register_model->addUser($data);
-		redirect('register');
+		$this->Komen_model->addKomen($data);
+		redirect('komen');
 		}
 	}
 	
