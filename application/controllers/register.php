@@ -7,7 +7,7 @@ class Register extends CI_Controller {
 		parent:: __construct();
 
 	$this->load->library('session');
-	$this->load->model('Register_model');
+	$this->load->model('Komen_model');
 	}
 
 	function index()
@@ -40,7 +40,7 @@ class Register extends CI_Controller {
 			$data['menu'] = "menu.php";
 		}
 			
-		$data['title'] = 'administrasi';
+		$data['title'] = 'register';
 		$data['usernama'] = $this->session->userdata('user_display');
 		$data['main_view'] = 'indexRegister.php';
 		$this->load->view('index.php',$data);
