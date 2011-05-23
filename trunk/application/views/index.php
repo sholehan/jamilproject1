@@ -51,7 +51,7 @@ background-color:#000000;
           <span class="style8"></br>
           </span>
           <br>
-         <a href="<?php echo site_url()?>register">Registrasi</a>
+         <a href="<?php echo site_url()?>register"><font color="#00FF00" size="+2"><strong>Registrasi</strong></font></a>
       </div></td>
   </tr>
   <tr>
@@ -59,7 +59,7 @@ background-color:#000000;
     <td align="center" valign="top" bgcolor="#3300FF"><strong>Do you want to give us a command ?</strong>
 	<br>
 	<br>
-	<input type="submit" name="komen" id="komen" value="Command"></td>
+	<a href="<?php echo site_url()?>komen" ><font size="+2" face="Comic Sans MS" color="#FFCC00"><strong>Give a command</strong></font></a></td>
   </tr>
   <tr>
     <th height="174" scope="row" bgcolor="#FF0000"><a href="" ><img src="<?php echo base_url()?>assets/550sypder.jpg" alt="modivy" width="233" height="163"></a></th>

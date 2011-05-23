@@ -7,15 +7,16 @@ class Register extends CI_Controller {
 		parent:: __construct();
 
 	$this->load->library('session');
+	$this->load->model('Register_model');
 	}
 
 	function index()
 	{
-	$this->form_validation->set_rules('nama', 'Nama', 'required');
-	$this->form_validation->set_rules('alamat', 'Alamat', 'required');
+	$this->form_validation->set_rules('nama', 'Name', 'required');
+	$this->form_validation->set_rules('alamat', 'Address', 'required');
 	$this->form_validation->set_rules('username', 'Username', 'required');
 	$this->form_validation->set_rules('password', 'Password', 'required');
-	$this->form_validation->set_rules('user_display', 'user_display', 'required');
+	$this->form_validation->set_rules('user_display', 'User Display', 'required');
 	$this->form_validation->set_rules('email', 'E Mail', 'required');
 
 		if ($this->form_validation->run() == FALSE){
@@ -47,18 +48,27 @@ class Register extends CI_Controller {
 		
 		else
 		{
-		
-			// code buat simpan data
-		
+		// code buat simpan data
+		$data=array('nama'=>$this->input->post('nama'),
+					'password'=>md5($this->input->post('password')),
+					'username'=>$this->input->post('username'),
+					'user_display'=>$this->input->post('user_display'),
+					'email'=>$this->input->post('email'),
+					'alamat'=>$this->input->post('alamat')
+					);
+		$this->Register_model->addUser($data);
+		redirect('register');
 		}
 	}
 	
-	function register_process()
+/*	function register_process()
 	{
 		$this->form_validation->set_rules('username', 'Username', 'required');
 		$this->form_validation->set_rules('password', 'Password', 'required');
 		$this->form_validation->set_rules('user_display', 'user_display', 'required');
-		$this->form_validation->set_rules('Email', 'E Mail', 'required');
+		$this->form_validation->set_rules('name', 'Name', 'required');
+		$this->form_validation->set_rules('alamat', 'Address', 'required');
+		$this->form_validation->set_rules('email', 'E Mail', 'required');
 
 		if ($this->form_validation->run() == FALSE){
 			$data['title'] = 'Register';
@@ -66,10 +76,19 @@ class Register extends CI_Controller {
 			}
 		else{
 			$username = $this->input->post('username');
-			$password = md5($this->input->post('password'));
+			$password = md5($this->input->post('password')
+			$name = $this->input->post('name')
+			$alamat= $this->input->post('alamat')
+			$user_dislpay = $this->input->post('user_display')
+			$email= $this->input->post('email')
+			);
 			$data['nama']=$this->db->get('tb_user');
 			$this->db->where('username',$username);
 			$this->db->where('password',$password);
+			$this->db->where('name',$name);
+			$this->db->where('alamat',$alamat);
+			$this->db->where('user_display',$user_display);
+			$this->db->where('email',$email);
 			$res = $this->db->get('tb_user')->result();
 			
 			if (count($res) > 0){
@@ -83,7 +102,7 @@ class Register extends CI_Controller {
 				redirect('index','refresh');
 				}
 			}
-			}
+			}*/
 			
 		function doLogout(){
 		$this->session->unset_userdata('no_user');
