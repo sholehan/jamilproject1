@@ -7,7 +7,7 @@ class Register extends CI_Controller {
 		parent:: __construct();
 
 	$this->load->library('session');
-	$this->load->model('Komen_model');
+	$this->load->model('Register_model');
 	}
 
 	function index()
