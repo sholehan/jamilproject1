@@ -11,19 +11,48 @@ class Register extends CI_Controller {
 
 	function index()
 	{
-	$data['no_user'] = $this->session->userdata('no_user');
-	$data['username'] = $this->session->userdata('username');
-			
-	
-	
-	$data['title'] = 'Register';
-	$data['usernama'] = $this->session->userdata('user_display');
-	$data['main_view'] = 'indexRegister.php';
-	$this->load->view('index.php',$data);
-	
+	$this->form_validation->set_rules('nama', 'Nama', 'required');
+	$this->form_validation->set_rules('alamat', 'Alamat', 'required');
+	$this->form_validation->set_rules('username', 'Username', 'required');
+	$this->form_validation->set_rules('password', 'Password', 'required');
+	$this->form_validation->set_rules('user_display', 'user_display', 'required');
+	$this->form_validation->set_rules('email', 'E Mail', 'required');
 
-	
+		if ($this->form_validation->run() == FALSE){
+		
+		$data['no_user'] = $this->session->userdata('no_user');
+		$data['username'] = $this->session->userdata('username');
+				
+		if (!empty($data['no_user']))
+		{
+				
+					//menampilkan update view
+			$data['slide_view'] = "user.php";
+			$data['menu'] = "menuAdmin.php";
+			$data['main_view'] = "menuAdmin.php";
+		}
+				
+		else
+		{
+					//menampilkan halaman login
+			$data['slide_view'] = "login.php";
+			$data['menu'] = "menu.php";
+		}
+			
+		$data['title'] = 'administrasi';
+		$data['usernama'] = $this->session->userdata('user_display');
+		$data['main_view'] = 'indexRegister.php';
+		$this->load->view('index.php',$data);
+		}
+		
+		else
+		{
+		
+			// code buat simpan data
+		
+		}
 	}
+	
 	function register_process()
 	{
 		$this->form_validation->set_rules('username', 'Username', 'required');

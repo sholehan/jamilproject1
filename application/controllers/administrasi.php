@@ -17,12 +17,18 @@ class Administrasi extends CI_Controller {
 	if (!empty($data['no_user']))
 	{
 			
-				
-				//menampilkan update view
+			//menampilkan update view
 	$data['slide_view'] = "user.php";
 	$data['menu'] = "menuAdmin.php";
-	
-}
+	$data['main_view'] = "menuAdmin.php";
+	}
+			
+	else
+	{
+			//menampilkan halaman login
+	$data['slide_view'] = "login.php";
+	$data['menu'] = "menu.php";
+	}
 		
 	$data['title'] = 'administrasi';
 	$data['usernama'] = $this->session->userdata('user_display');
