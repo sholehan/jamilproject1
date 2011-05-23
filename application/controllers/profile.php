@@ -11,10 +11,10 @@ class Profile extends CI_Controller {
 
 	function index()
 	{
-	$data['no_user'] = $this->session->userdata('no_user');
+	$data['id_user'] = $this->session->userdata('id_user');
 	$data['username'] = $this->session->userdata('username');
 	
-	if (!empty($data['no_user']))
+	if (!empty($data['id_user']))
 	{
 			
 			//menampilkan update view
