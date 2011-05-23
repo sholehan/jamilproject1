@@ -1,3 +1,9 @@
+<html>
+<head>
+<title>Parkir | <?php echo $title ?></title>
+<link rel="stylesheet" type="text/css" href="<?php echo base_url()?>assets/css/style.css" >
+</head>
+<body>
 <style type="text/css">
 <!--
 body{
@@ -45,7 +51,7 @@ background-color:#000000;
           <span class="style8"></br>
           </span>
           <br>
-         <form action="<?php echo site_url()?>register/index" method="post" name="register" id="register"><input type="submit" name="daftar" id="daftar" value="Register">
+         <a href="<?php echo site_url()?>register">Registrasi</a>
       </div></td>
   </tr>
   <tr>
@@ -66,3 +72,5 @@ background-color:#000000;
 </tr>
 </table>
 </center>
+</body>
+</html>

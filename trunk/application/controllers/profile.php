@@ -11,27 +11,30 @@ class Profile extends CI_Controller {
 
 	function index()
 	{
-	$data['id_user'] = $this->session->userdata('id_user');
+	$data['no_user'] = $this->session->userdata('no_user');
 	$data['username'] = $this->session->userdata('username');
 	
-	if (!empty($data['id_user']))
+	if (!empty($data['no_user']))
 	{
 			
-				
-				//menampilkan update view
+			//menampilkan update view
 	$data['slide_view'] = "user.php";
 	$data['menu'] = "menuAdmin.php";
-	}
+	$data['main_view'] = "menuAdmin.php";
+}
+			
 	else
 	{
 			//menampilkan halaman login
 	$data['slide_view'] = "login.php";
 	$data['menu'] = "menu.php";
-	}	
+	}
+	
+	
 	$data['title'] = 'Profile';
 	$data['usernama'] = $this->session->userdata('user_display');
 	$data['main_view'] = 'indexProfile.php';
-	$this->load->view('index.php',$data);
+	$this->load->view('index',$data);
 	
 
 	
