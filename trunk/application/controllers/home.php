@@ -11,10 +11,10 @@ class Home extends CI_Controller {
 
 	function index()
 	{
-	$data['no_user'] = $this->session->userdata('no_user');
+	$data['id_user'] = $this->session->userdata('id_user');
 	$data['username'] = $this->session->userdata('username');
 			
-	if (!empty($data['no_user']))
+	if (!empty($data['id_user']))
 	{
 			
 			//menampilkan update view
@@ -56,7 +56,7 @@ class Home extends CI_Controller {
 			$res = $this->db->get('tb_user')->result();
 			
 			if (count($res) > 0){
-				$this->session->set_userdata('no_user',$res[0]->no_user );
+				$this->session->set_userdata('id_user',$res[0]->id_user );
 				$this->session->set_userdata('user_display',$res[0]->user_display );
 				redirect('home','refresh');
 				}
@@ -69,7 +69,7 @@ class Home extends CI_Controller {
 			}
 			
 		function doLogout(){
-		$this->session->unset_userdata('no_user');
+		$this->session->unset_userdata('id_user');
 		$this->session->unset_userdata('user_display');
 		//$this->session->sess_destroy();
 		redirect('index','refresh');
