@@ -6,12 +6,12 @@
 	<tr>
     <td width="154">Nama *</td>
     <td width="20">:</td>
-    <td width="287"><?php echo form_error('nama'); ?> <input type="text" name="username" id="username" value="<?php echo set_value('nama');?>" >	</td>
+    <td width="287"><?php echo form_error('nama'); ?> <input type="text" name="nama" id="nama" value="<?php echo set_value('nama');?>" >	</td>
   </tr>
   <tr>
     <td width="154">Alamat *</td>
     <td width="20">:</td>
-    <td width="287"><?php echo form_error('username'); ?> <textarea type="text" name="alamat" id="alamat" value=""><?php echo set_value('alamat');?></textarea>	</td>
+    <td width="287"><?php echo form_error('alamat'); ?> <textarea type="text" name="alamat" id="alamat" value=""><?php echo set_value('alamat');?></textarea>	</td>
   </tr>
 	<tr>
     <td width="154">Username *</td>
