@@ -7,6 +7,7 @@ class Profile extends CI_Controller {
 		parent:: __construct();
 
 	$this->load->library('session');
+	
 	}
 
 	function index()
@@ -14,14 +15,14 @@ class Profile extends CI_Controller {
 	$data['id_user'] = $this->session->userdata('id_user');
 	$data['username'] = $this->session->userdata('username');
 	
-	if (!empty($data['id_user']))
+	if (!empty($data['username']))
 	{
 			
 			//menampilkan update view
 	$data['slide_view'] = "user.php";
 	$data['menu'] = "menuAdmin.php";
-	$data['main_view'] = "menuAdmin.php";
-}
+	$data['main_view'] = "home.php";
+	}
 			
 	else
 	{
@@ -31,11 +32,10 @@ class Profile extends CI_Controller {
 	}
 	
 	
-	$data['title'] = 'Profile';
+	$data['title'] = 'profile';
 	$data['usernama'] = $this->session->userdata('user_display');
 	$data['main_view'] = 'indexProfile.php';
 	$this->load->view('index',$data);
-	
 
 	
 	}
