@@ -19,7 +19,7 @@ class Profile extends CI_Controller {
 	{
 			
 			//menampilkan update view
-	$data['slide_view'] = "user.php";
+	$data['slide_view'] = "logout.php";
 	$data['menu'] = "menuAdmin.php";
 	$data['main_view'] = "home.php";
 	}
@@ -35,6 +35,7 @@ class Profile extends CI_Controller {
 	$data['title'] = 'profile';
 	$data['usernama'] = $this->session->userdata('user_display');
 	$data['main_view'] = 'indexProfile.php';
+	$data['user'] = $this->session->userdata('username');
 	$this->load->view('index',$data);
 
 	

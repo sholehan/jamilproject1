@@ -26,7 +26,7 @@ class Komen extends CI_Controller {
 		{
 				
 					//menampilkan update view
-			$data['slide_view'] = "user.php";
+			$data['slide_view'] = "logout.php";
 			$data['menu'] = "menuAdmin.php";
 			$data['main_view'] = "menuAdmin.php";
 		}
@@ -35,12 +35,13 @@ class Komen extends CI_Controller {
 		{
 					//menampilkan halaman login
 			$data['slide_view'] = "login.php";
-			$data['menu'] = "menu.php";
+						$data['menu'] = "menu.php";
 		}
 			
 		$data['title'] = 'komen';
 		$data['usernama'] = $this->session->userdata('user_display');
 		$data['main_view'] = 'indexKomen.php';
+		$data['user'] = $this->session->userdata('username');
 		$this->load->view('index.php',$data);
 		}
 		

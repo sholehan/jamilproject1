@@ -13,12 +13,12 @@ class Home extends CI_Controller {
 	{
 	$data['id_user'] = $this->session->userdata('id_user');
 	$data['username'] = $this->session->userdata('username');
-	$data['slide_view']	 = "user.php";	
+	$data['slide_view']	 = "login.php";	
 	if (!empty($data['username']))
 	{
 			
 			//menampilkan update view
-	$data['slide_view'] = "user.php";
+	$data['slide_view'] = "logout.php";
 	$data['menu'] = "menuAdmin.php";
 	$data['main_view'] = "menuAdmin.php";
 	}
@@ -32,6 +32,7 @@ class Home extends CI_Controller {
 		
 	$data['title'] = 'Beranda';
 	$data['usernama'] = $this->session->userdata('user_display');
+	$data['user'] = $this->session->userdata('username');
 	$data['main_view'] = 'beranda.php';
 	$this->load->view('index.php',$data);
 	
