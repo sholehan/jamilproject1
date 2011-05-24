@@ -1,15 +1,15 @@
-<h1> REGISTRASI</h1>
+<h1> REGISTRATION</h1>
 
 <form id="siswa" name="siswa" method="post" action="">
 <table width="505" border="0">
 
 	<tr>
-    <td width="154">Nama *</td>
+    <td width="154">Name *</td>
     <td width="20">:</td>
     <td width="287"><?php echo form_error('nama'); ?> <input type="text" name="nama" id="nama" value="<?php echo set_value('nama');?>" >	</td>
   </tr>
   <tr>
-    <td width="154">Alamat *</td>
+    <td width="154">Adress *</td>
     <td width="20">:</td>
     <td width="287"><?php echo form_error('alamat'); ?> <textarea type="text" name="alamat" id="alamat" value=""><?php echo set_value('alamat');?></textarea>	</td>
   </tr>
