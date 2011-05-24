@@ -38,7 +38,7 @@ function index()
 	{
 			
 			//menampilkan update view
-	$data['slide_view'] = "user.php";
+	$data['slide_view'] = "logout.php";
 	$data['menu'] = "menuAdmin.php";
 	$data['main_view'] = "home.php";
 	}
@@ -48,13 +48,16 @@ function index()
 			//menampilkan halaman login
 	$data['slide_view'] = "login.php";
 	$data['menu'] = "menu.php";
+	
+	//$data['user'] = $this->session->userdata('username');
 	}
 		
 	$data['title'] = 'administrasi';
 	$data['usernama'] = $this->session->userdata('user_display');
 	$data['main_view'] = 'indexAdm.php';
 	$data['menu'] = "menuAdmin.php";
-	$data['slide_view'] = "user.php";
+	$data['slide_view'] = "logout.php";
+	$data['data'] = 'Vuser.php';
 	$this->load->view('index.php',$data);
 
 	}

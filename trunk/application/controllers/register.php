@@ -29,9 +29,10 @@ class Register extends CI_Controller {
 			{
 				
 					//menampilkan update view
-			$data['slide_view'] = "user.php";
+			$data['slide_view'] = "logout.php";
 			$data['menu'] = "menuAdmin.php";
 			$data['main_view'] = "menuAdmin.php";
+			
 			}
 				
 		else
@@ -44,6 +45,7 @@ class Register extends CI_Controller {
 		$data['title'] = 'register';
 		$data['usernama'] = $this->session->userdata('user_display');
 		$data['main_view'] = 'indexRegister.php';
+		$data['user'] = $this->session->userdata('username');
 		$this->load->view('index.php',$data);
 			}
 		
