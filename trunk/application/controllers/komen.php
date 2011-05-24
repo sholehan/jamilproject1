@@ -22,7 +22,7 @@ class Komen extends CI_Controller {
 		$data['id_user'] = $this->session->userdata('id_user');
 		$data['username'] = $this->session->userdata('username');
 				
-		if (!empty($data['id_user']))
+		if (!empty($data['username']))
 		{
 				
 					//menampilkan update view
@@ -49,7 +49,7 @@ class Komen extends CI_Controller {
 		// code buat simpan data
 		$data=array('nama'=>$this->input->post('nama'),
 					'email'=>$this->input->post('email'),
-					'alamat'=>$this->input->post('alamat')
+					'alamat'=>$this->input->post('alamat'),
 					'komen'=>$this->input->post('komen')
 					);
 		$this->Komen_model->addKomen($data);
