@@ -8,7 +8,7 @@
 <table width="198" border=""
 <form action="<?php echo site_url()?>home/login_process" method="post" name="loginForm" id="loginForm"><table width="194" style="border:outset" bgcolor="#00FF00">
   <tr>
-    <td colspan="3" class="lg_banner"><strong><span class="style1">Login to administrating</span></td>
+    <td colspan="3" class="lg_banner"><strong><span class="style1">Login to use</span></td>
     </tr>
   <tr class="lg_login">
     <td width="69"><font size="4" color="#0000FF" style="font:'Comic Sans MS'">Username</font></td>
