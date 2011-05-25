@@ -9,7 +9,7 @@
     <td width="287"><?php echo form_error('nama'); ?> <input type="text" name="nama" id="nama" value="<?php echo set_value('nama');?>" >	</td>
   </tr>
   <tr>
-    <td width="154">Adress *</td>
+    <td width="154">Address *</td>
     <td width="20">:</td>
     <td width="287"><?php echo form_error('alamat'); ?> <textarea type="text" name="alamat" id="alamat" value=""><?php echo set_value('alamat');?></textarea>	</td>
   </tr>

@@ -65,6 +65,7 @@ function edit()
 		$this->form_validation->set_rules('nama', 'Name', 'required'); //harus diisi 
 		$this->form_validation->set_rules('username', 'Username', 'required'); //harus diisi 
 		$this->form_validation->set_rules('user_display', 'User Display', 'required'); //harus diisi
+		$this->form_validation->set_rules('password', 'Passsord', 'required'); //harus diisi
 		$this->form_validation->set_rules('alamat', 'Alamat', 'required'); //harus diisi
 		$this->form_validation->set_rules('email', 'E Mail', 'required'); //harus diisi
 
@@ -88,6 +89,7 @@ function edit()
 			$data = array ('nama' => $this->input->post('nama'),// lets post the field
 						   'username' => $this->input->post('username'),	
 						   'user_display' => $this->input->post('user_display'),		
+						   'password' => md5($this->input->post('password')),		
    						   'email' => $this->input->post('email'),		
 						   'alamat' => $this->input->post('alamat')		);
 						   
