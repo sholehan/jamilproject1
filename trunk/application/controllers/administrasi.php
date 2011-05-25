@@ -18,6 +18,10 @@ function index()
 	$this->form_validation->set_rules('merk', 'Brand Vehicles', 'required');
 	$this->form_validation->set_rules('nopol', 'Police Numbers', 'required');
 
+	
+//int mktime ([ int $hour = date("H") [, int $minute = date("i") [, int $second = date("s") [, int $month = date("n") [, int $day = date("j") [, int $year = date("Y") [, int $is_dst = -1 ]]]]]]] );
+
+
 		if ($this->form_validation->run() == FALSE)
 		{
 
@@ -63,10 +67,8 @@ function index()
 	}
 	else
 	{
-	$data=array('nama_pemilik'=>$this->input->post('nama'),
-					'jenis_kend'=>$this->input->post('type'),
-					'merk_kend'=>$this->input->post('merk'),
-					'no_polisi'=>$this->input->post('nopol')
+	$data=array('nopol'=>$this->input->post('nopol'),
+					'type'=>$this->input->post('type')
 					);
 		$this->Adm_model->addAdm($data);
 		redirect('administrasi');
