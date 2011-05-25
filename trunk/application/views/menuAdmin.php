@@ -13,7 +13,7 @@
 		<a href="<?php base_url()?>home.php" class="style5"><strong><span class="style1">Home</span></strong></a>&nbsp;
 		<a href="<?php base_url()?>profile.php" class="style5"><strong><span class="style1">Profile</span></strong></a>&nbsp;
 		<a href="<?php base_url()?>administrasi.php" class="style5"><strong><span class="style1">Kolom Kerja</span></strong></a>&nbsp;
-		<a href="<?php base_url()?>Vuser.php" class="style5"><strong><span class="style1">Data User</span></strong></a></td></td>
+		<a href="<?php base_url()?>user.php" class="style5"><strong><span class="style1">Data User</span></strong></a></td></td>
 		      </tr>
     </table></td>
   </tr>
