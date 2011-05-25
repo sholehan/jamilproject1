@@ -5,7 +5,7 @@ class User_model extends CI_Model {
 		parent:: __contruct();
 		
 	}
-	function getUser($query=FALSE,$id=FALSE)	//$limit=FALSE,$offset=FALSE
+	function getUser($query=FALSE,$id=FALSE) 	//$limit=FALSE,$offset=FALSE
 	{
 		if($query=='list')
 		{
@@ -17,23 +17,23 @@ class User_model extends CI_Model {
 		elseif ($query=='username')
 		{
 			//$this->db->limit($limit,$offset)
-			$this->db->where('usermane',$id);
+			$this->db->where('username',$id);
 			return $this->db->get('tb_user')->row();
 		}
-	/*}
-	function addAdm($data)
+	}
+	function addUser($data)
 	{
 		$this->db->insert('tb_user',$data);
 	}
-	function editAdm($id,$data)
+	function editUser($id,$data)
 	{
 		$this->db->where('username',$id);
 		$this->db->update('tb_user',$data);
 	}
-	function deleteAdm($id)
+	function deleteUser($id)
 	{
 		$this->db->where('username',$id);
 		$this->db->delete('tb_user');
-	}*/
-}	
+	}
+	
 }	
