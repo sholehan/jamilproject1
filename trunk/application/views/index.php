@@ -33,7 +33,7 @@ background-color:#000000;
 <?php $this->load->view($menu)?>
   <table width="1101" height="725" style="border:#FF0000" >
   <tr>
-    <th width="246" height="180" scope="row" bgcolor="#FF0000"><a href=""><img src="<?php echo base_url()?>assets/51854910.jpg" alt="bola" width="233" height="163" align=""/></a></th>
+    <th width="246" height="180" scope="row" bgcolor="#FF0000"><a href="" style="border-color:#FF0000"><img src="<?php echo base_url()?>assets/51854910.jpg" alt="bola" width="233" height="163" align=""/></a></th>
     <td width="594" rowspan="4" bgcolor="#00FF00" valign="top" >
 	<div  id="main">
 &nbsp; <?php $this->load->view($main_view)?></div> </td>
