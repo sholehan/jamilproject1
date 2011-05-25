@@ -25,6 +25,7 @@
 	<td width="150"><input type="submit" id="simpan" value="Simpan"/></td>	</tr>
 </table>	</form>
 <br />
+<form action="<?php echo base_url();?>user/edit" id="edit" name="edit" method="post">
 <table width="532" height="93" border="1" bordercolor="#0000FF">
   <tr bgcolor="#FFFF00" bordercolor="#FF0000" >
     <td width="27" align="center" ><strong><font color="#0000FF" size="-1">No</font></strong></td>
@@ -43,8 +44,10 @@
     <td><font color="#0000FF" size="-1"><?php echo $row['jenis_kend']?></font></td>
     <td><font color="#0000FF" size="-1"><?php echo $row['merk_kend']?></font></td>
     <td><font color="#0000FF" size="-1"><?php echo $row['no_polisi']?></font></td>
-	<td><a href=""><font size="-1">Edit</font></a> | <a href=""><font size="-1">Delete</font></a></td>
+	<td>
+	<a href=""><font size="-1">Edit</font></a> | 
+	<a href=""><font size="-1">Delete</font></a></td>
   </tr>
   <?php $no++; }?>
 </table>
-
+</form>
