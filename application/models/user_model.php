@@ -35,5 +35,5 @@ class User_model extends CI_Model {
 		$this->db->where('username',$id);
 		$this->db->delete('tb_user');
 	}*/
-	
+}	
 }	

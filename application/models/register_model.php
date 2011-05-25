@@ -25,7 +25,7 @@ class Register_model extends CI_Model {
 	}
 	function editUser($id,$data)
 	{
-		$this->db->where('id_user',$id);
+		$this->db->where('username',$id);
 		$this->db->update('tb_user',$data);
 	}
 	function deleteUser($id)
