@@ -107,10 +107,5 @@ class Register extends CI_Controller {
 			}
 			}*/
 			
-		function doLogout(){
-		$this->session->unset_userdata('no_user');
-		$this->session->unset_userdata('user_display');
-		//$this->session->sess_destroy();
-		redirect('index','refresh');
-	}
+		
 }
