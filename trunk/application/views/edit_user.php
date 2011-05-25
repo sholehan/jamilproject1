@@ -26,6 +26,14 @@
     </td>
   </tr>
 <tr>
+  <td>Password</td>
+    <td>:</td>
+    <td>
+    <?php echo form_error('password'); ?>
+    <input type="text" name="password" id="password" value="<?php echo  $row->password; ?>"/>
+    </td>
+  </tr>
+<tr>
   <td>Email</td>
     <td>:</td>
     <td>

@@ -1,24 +1,15 @@
 <h1 align="center"><font color="#0000FF">Kolom Kerja Parkir</font></h1>
 <br />
 <form id="addAdm" name="addAdm" method="post" action="<?php echo base_url();?>administrasi/index">
-<table border="0" cellpadding="0" height="160">
+<table border="0" cellpadding="0" height="5">
 <tr>
-	<td width="200">Owner's Name</td>
+	<td width="100">Nopol</td>
 	<td width="5">:</td>
-	<td width="150"><?php echo form_error('nama');?><input type="text" id="nama" name="nama" value="<?php echo set_value('nama');?>" /></td>	</tr>
+	<td width="150"><?php echo form_error('nopol');?><input type="text" id="nopol" name="nopol" value="<?php echo set_value('nopol');?>" /></td>	</tr>
 <tr>
-	<td width="90">Vehicle Type</td>
+	<td width="90">Type</td>
 	<td width="5">:</td>
 	<td width="150"><?php echo form_error('type');?><input type="text" id="type" name="type" value="<?php echo set_value('type');?>" /></td>	</tr>
-<tr>
-	<td width="90">Brand Vehicles</td>
-	<td width="5">:</td>
-	<td width="150"><?php echo form_error('merk');?><input type="text" id="merk" name="merk" value="<?php echo set_value('merk');?>"/></td>	</tr>
-<tr>
-	<td width="90">Police Numbers</td>
-	<td width="5">:</td>
-	<td width="150"><?php echo form_error('nopol');?><input type="text" id="nopol" name="nopol" value="<?php echo set_value('nopol');?>"/></td>
-</tr>
 <tr>
 	<td width="90"></td>
 	<td width="5"></td>
