@@ -67,17 +67,18 @@ function edit()
 		$this->form_validation->set_rules('user_display', 'User Display', 'required'); //harus diisi
 		$this->form_validation->set_rules('alamat', 'Alamat', 'required'); //harus diisi
 		$this->form_validation->set_rules('email', 'E Mail', 'required'); //harus diisi
+
+		if ($this->form_validation->run() == FALSE)
+		{
 		$data['menu'] = "menuAdmin.php";
 		$data['slide_view'] = "logout.php";
 		$data['usernama'] = $this->session->userdata('user_display');
 
-		if ($this->form_validation->run() == FALSE)
-		{
 			$id = $this->uri->segment(3); // ndapetin segmen ke tiga dari url diitung dr base_urlnya/url utama yaitu /parkir/
 			$data['title'] = 'Edit User';// title
 			$data['main_view'] = 'edit_user.php';//mendefinisikan main view nya
 			$data['row'] = $this->User_model->getUser('username',$id);//ambil data dengan pemanggilan model berdasrkan username
-			$this->load->view('index.php',$data);//load view beserta datanya
+			$this->load->view('index',$data);//load view beserta datanya
 		}
 		else
 		{
@@ -89,6 +90,7 @@ function edit()
 						   'user_display' => $this->input->post('user_display'),		
    						   'email' => $this->input->post('email'),		
 						   'alamat' => $this->input->post('alamat')		);
+						   
 			$this->User_model->editUser($id,$data); // insert data nya menggunakan model User_model
 			redirect('user'); // fungsi untuk redirect url
 		}

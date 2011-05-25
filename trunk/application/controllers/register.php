@@ -60,7 +60,7 @@ class Register extends CI_Controller {
 					'alamat'=>$this->input->post('alamat')
 					);
 		$this->Register_model->addUser($data);
-		redirect('register');
+		redirect('user');
 			}
 	}
 	

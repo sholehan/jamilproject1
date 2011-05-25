@@ -17,7 +17,7 @@ class User_model extends CI_Model {
 		elseif ($query=='username')
 		{
 			//$this->db->limit($limit,$offset)
-			$this->db->where('username',$id);
+			$this->db->where('no',$id);
 			return $this->db->get('tb_user')->row();
 		}
 	}
@@ -27,12 +27,12 @@ class User_model extends CI_Model {
 	}
 	function editUser($id,$data)
 	{
-		$this->db->where('username',$id);
+		$this->db->where('no',$id);
 		$this->db->update('tb_user',$data);
 	}
 	function deleteUser($id)
 	{
-		$this->db->where('username',$id);
+		$this->db->where('no',$id);
 		$this->db->delete('tb_user');
 	}
 	

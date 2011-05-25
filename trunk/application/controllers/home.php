@@ -28,8 +28,7 @@ class Home extends CI_Controller {
 			//menampilkan halaman login
 	$data['slide_view'] = "login.php";
 	$data['menu'] = "menu.php";
-	$thq='<div id="pesan">Maaf Username atau password anda belum terisi</div>';
-
+	
 	}
 		
 	$data['title'] = 'Beranda';
@@ -61,6 +60,7 @@ class Home extends CI_Controller {
 			if (count($res) > 0){
 				$this->session->set_userdata('username',$res[0]->username);
 				$this->session->set_userdata('user_display',$res[0]->user_display );
+				$thq='<div id="pesan">Maaf Username atau password anda belum terisi</div>';
 				redirect('home','refresh');
 				}
 			else{
