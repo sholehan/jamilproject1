@@ -28,6 +28,8 @@ class Home extends CI_Controller {
 			//menampilkan halaman login
 	$data['slide_view'] = "login.php";
 	$data['menu'] = "menu.php";
+	$thq='<div id="pesan">Maaf Username atau password anda belum terisi</div>';
+
 	}
 		
 	$data['title'] = 'Beranda';

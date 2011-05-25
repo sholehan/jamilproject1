@@ -54,7 +54,6 @@ function index()
 		
 	$data['title'] = 'user';
 	$data['usernama'] = $this->session->userdata('user_display');
-	$data['main_view'] = 'Vuser.php';
 	$data['menu'] = "menuAdmin.php";
 	$data['slide_view'] = "logout.php";
 	$data['user'] = $this->session->userdata('username');
@@ -74,4 +73,4 @@ function index()
 	}*/
 }
 		
-}
+
