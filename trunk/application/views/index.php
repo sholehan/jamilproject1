@@ -27,7 +27,7 @@ background-color:#000000;
 -->
 </style>
 <center>
-<table border="0" cellpadding="15" bordercolor="#00FF00" bgcolor="#000000" style="border:" background="bg.jpg">
+<table border="0" cellpadding="15" bordercolor="#00FF00" style="background:none" background="bg.jpg">
 <tr> <td>
 
 <?php $this->load->view($menu)?>
