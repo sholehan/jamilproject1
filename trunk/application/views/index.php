@@ -27,11 +27,11 @@ background-color:#000000;
 -->
 </style>
 <center>
-<table border="0" bgcolor="#FFFFFF" cellpadding="5">
+<table border="0" cellpadding="15" bordercolor="#00FF00" bgcolor="#000000" style="border:" background="bg.jpg">
 <tr> <td>
 
 <?php $this->load->view($menu)?>
-  <table width="1101" height="725" style="border:#FF0000" >
+  <table width="1101" height="725" bgcolor="#FF0000" style="border:none">
   <tr>
     <th width="246" height="180" scope="row" bgcolor="#FF0000"><a href="" style="border-color:#FF0000"><img src="<?php echo base_url()?>assets/51854910.jpg" alt="bola" width="233" height="163" align=""/></a></th>
     <td width="594" rowspan="4" bgcolor="#00FF00" valign="top" >
