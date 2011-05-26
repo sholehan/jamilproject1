@@ -13,8 +13,9 @@ class Administrasi extends CI_Controller {
 
 function index()
 {
-	$this->form_validation->set_rules('type', 'Vehicle Type', 'required');
-	$this->form_validation->set_rules('nopol', 'Police Numbers', 'required');
+	$this->form_validation->set_rules('type', 'Type', 'required');
+	$this->form_validation->set_rules('nopol', 'Nomor Polisi', 'required');
+	$this->form_validation->set_rules('in', 'Jam Masuk', 'required');
 
 	
 //int mktime ([ int $hour = date("H") [, int $minute = date("i") [, int $second = date("s") [, int $month = date("n") [, int $day = date("j") [, int $year = date("Y") [, int $is_dst = -1 ]]]]]]] );
@@ -66,6 +67,7 @@ function index()
 	else
 	{
 	$data=array('nopol'=>$this->input->post('nopol'),
+				//('jam_masuk'=>($this->input->post('in'),
 					'type'=>$this->input->post('type')
 					);
 		$this->Adm_model->addAdm($data);
