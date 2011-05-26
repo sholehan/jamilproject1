@@ -16,7 +16,24 @@
 	<td width="150"><input type="submit" id="simpan" value="Simpan"/></td>	</tr>
 </table>	</form>
 <br />
-<table border="0"><tr align="right"><td width="596"><input type="submit" id="stop" name="stop" value="Stop" /></td></tr></table>
+<table border="0"><tr align="right"><td width="596"><?php
+    $timeZone = 'Asia/jakarta';  // +2 hours
+    date_default_timezone_set($timeZone);
+   
+    $dateSrc = 'GMT+7:00';
+    $TimeOut = new DateTime($dateSrc);
+   
+    //echo 'date(): '.date('H:i:s', strtotime($dateSrc));
+    // correct! date(): 14:50:00
+   
+    echo ''.$TimeOut->format('H:i:s');
+    // INCORRECT! DateTime::format(): 12:50:00 ?>
+	
+<form method="post"	>
+	<input type="submit" id="stop" name="stop" value="Stop" />
+	
+	</td></tr></table>
+	
 <form action="<?php echo base_url();?>user/edit" id="edit" name="edit" method="post">
 <table width="599" height="50" border="1" bordercolor="#0000FF">
   <tr bgcolor="#FFFF00" bordercolor="#FF0000" >
@@ -36,11 +53,23 @@
     <td><font color="#0000FF" size="-1"><?php echo $no?></font></td>
     <td><font color="#0000FF" size="-1"><?php echo $row['nopol']?></font></td>
     <td><font color="#0000FF" size="-1"><?php echo $row['type']?></font></td>
-	   <td><font color="#0000FF" size="-1"><?php echo $row['jam_masuk']?></font></td>
-    <td><font color="#0000FF" size="-1"><?php echo $row['jam_keluar']?></font></td>
-	<td><font color="#0000FF" size="-1"><?php echo $row['lama_parkir']?></font></td>
-    <td><font color="#0000FF" size="-1"><?php echo $row['biaya']?></font></td>
-    <td><font color="#0000FF" size="-1"><?php echo $row['status']?></font></td>
+	<td><font color="#0000FF" size="-1"><?php
+    $timeZone = 'Asia/jakarta';  // +2 hours
+    date_default_timezone_set($timeZone);
+   
+    $dateSrc = 'GMT+7:00';
+    $dateTime = new DateTime($dateSrc);
+   
+    //echo 'date(): '.date('H:i:s', strtotime($dateSrc));
+    // correct! date(): 14:50:00
+   
+    echo ''.$dateTime->format('H:i:s');
+    // INCORRECT! DateTime::format(): 12:50:00 
+	?></font></td>
+    <td><font color="#0000FF" size="-1"></font></td>
+	<td><font color="#0000FF" size="-1"></font></td>
+    <td><font color="#0000FF" size="-1"></font></td>
+    <td><font color="#0000FF" size="-1"><a href="<?php echo base_url();?>administrasi/out">Stop</a></font></td>
 <!--<td>
 	<a href=""><font size="-1">Edit</font></a> | 
 	<a href=""><font size="-1">Delete</font></a></td>-->
@@ -49,20 +78,3 @@
 </table>
 </form>
 
-<?php
-/*function time_difference($endtime){
-    $hours =date("G",$endtime);
-    $mins =date("i",$endtime);
-    $secs =date("s",$endtime);
-    $diff=",'hour': ".$hours.",'min': ".$mins.",'sec': ".$secs;
-    return $diff;
-}   
-$end_time = $future_date - time();
-$difference = time_difference($end_time);
-echo $difference;
-
-//sample output
-'day': 2,'month': 1,'year': 0,'hour': 2,'min': 05,'sec': 41;*/
-$today = date("H:i:s");
-echo $today;
-?>
