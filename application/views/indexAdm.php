@@ -9,14 +9,13 @@
 <tr>
 	<td width="90">Type</td>
 	<td width="5">:</td>
-	<td width="150"><?php echo form_error('type');?><input type="text" id="type" name="type" value="<?php echo set_value('type');?>" /></td>	</tr>
+	<td width="150"><?php echo form_error('type');?>
+	  <input type="text" id="type" name="type" value="<?php echo set_value('type');?>" /></td>
+</tr>
 <tr>
-	<td width="90"></td>
-	<td width="5"></td>
-	<td width="150"><input type="submit" id="simpan" value="Simpan"/></td>	</tr>
-</table>	</form>
-<br />
-<table border="0"><tr align="right"><td width="596"><?php
+  <td></td>
+  <td></td>
+  <td><?php
     $timeZone = 'Asia/jakarta';  // +2 hours
     date_default_timezone_set($timeZone);
    
@@ -27,10 +26,19 @@
     // correct! date(): 14:50:00
    
     echo ''.$TimeOut->format('H:i:s');
-    // INCORRECT! DateTime::format(): 12:50:00 ?>
+    // INCORRECT! DateTime::format(): 12:50:00 ?></td>
+</tr>
+<tr>
+	<td width="90"></td>
+	<td width="5"></td>
+	<td width="150"><input type="submit" id="simpan" value="Simpan"/></td>	</tr>
+</table>	
+</form>
+<br />
+<table border="0"><tr align="right"><td width="596">
 	
 <form method="post"	>
-	<input type="submit" id="stop" name="stop" value="Stop" />
+	<input type="submit" id="stop" name="stop" value="Stop" /></form>
 	
 	</td></tr></table>
 	
@@ -53,7 +61,7 @@
     <td><font color="#0000FF" size="-1"><?php echo $no?></font></td>
     <td><font color="#0000FF" size="-1"><?php echo $row['nopol']?></font></td>
     <td><font color="#0000FF" size="-1"><?php echo $row['type']?></font></td>
-	<td><font color="#0000FF" size="-1"><?php
+	<td ><font color="#0000FF" size="-1"><?php
     $timeZone = 'Asia/jakarta';  // +2 hours
     date_default_timezone_set($timeZone);
    
