@@ -13,16 +13,14 @@ class Administrasi extends CI_Controller {
 
 function index()
 {
-	$this->form_validation->set_rules('nama', 'Name', 'required');
 	$this->form_validation->set_rules('type', 'Vehicle Type', 'required');
-	$this->form_validation->set_rules('merk', 'Brand Vehicles', 'required');
 	$this->form_validation->set_rules('nopol', 'Police Numbers', 'required');
 
 	
 //int mktime ([ int $hour = date("H") [, int $minute = date("i") [, int $second = date("s") [, int $month = date("n") [, int $day = date("j") [, int $year = date("Y") [, int $is_dst = -1 ]]]]]]] );
 
 
-		if ($this->form_validation->run() == FALSE)
+	if ($this->form_validation->run() == FALSE)
 		{
 
 
@@ -75,5 +73,18 @@ function index()
 		
 	}
 }
-		
+	function out()
+	{
+	$timeZone = 'Asia/jakarta';  // +2 hours
+    date_default_timezone_set($timeZone);
+   
+    $dateSrc = 'GMT+7:00';
+    $TimeOut = new DateTime($dateSrc);
+   
+    //echo 'date(): '.date('H:i:s', strtotime($dateSrc));
+    // correct! date(): 14:50:00
+   
+    echo ''.$TimeOut->format('H:i:s');
+    // INCORRECT! DateTime::format(): 12:50:00 
+	}	
 }
