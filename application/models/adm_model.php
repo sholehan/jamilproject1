@@ -14,10 +14,10 @@ class Adm_model extends CI_Model {
 			$result=$qr->result_array();
 			return $result;
 		}
-		elseif ($query=='nama_pemilik')
+		elseif ($query=='by_id_parkir')
 		{
 			//$this->db->limit($limit,$offset)
-			$this->db->where('nama_pemilik',$id);
+			$this->db->where('id_parkir',$id);
 			return $this->db->get('tb_parkir')->row();
 		}
 	}
@@ -27,12 +27,12 @@ class Adm_model extends CI_Model {
 	}
 	function editAdm($id,$data)
 	{
-		$this->db->where('nama_pemilik',$id);
+		$this->db->where('id_parkir',$id);
 		$this->db->update('tb_parkir',$data);
 	}
 	function deleteAdm($id)
 	{
-		$this->db->where('nama_pemilik',$id);
+		$this->db->where('id_parkir',$id);
 		$this->db->delete('tb_parkir');
 	}
 	

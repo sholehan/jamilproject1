@@ -75,6 +75,6 @@ class Home extends CI_Controller {
 		$this->session->unset_userdata('username');
 		$this->session->unset_userdata('user_display');
 		//$this->session->sess_destroy();
-		redirect('index','refresh');
+		redirect('home','refresh');
 	}
 }

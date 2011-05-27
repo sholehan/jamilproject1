@@ -31,7 +31,7 @@ class Register extends CI_Controller {
 					//menampilkan update view
 			$data['slide_view'] = "logout.php";
 			$data['menu'] = "menuAdmin.php";
-			$data['main_view'] = "menuAdmin.php";
+			$data['main_view'] = "index.php";
 			
 			}
 				

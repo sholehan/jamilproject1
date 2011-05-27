@@ -5,7 +5,7 @@
 -->
 </style>
 
-<form action="<?php echo site_url()?>home/login_process" method="post" name="loginForm" id="loginForm"><table width="194" style="border:outset" bgcolor="#00FF00">
+<form action="<?php echo site_url()?>home/login_process" method="post" name="loginForm" id="loginForm"><table width="194"  bgcolor="#00FF00" >
   <tr>
     <td colspan="3" class="lg_banner"><strong><span class="style1">Login to use</span></td>
     </tr>
