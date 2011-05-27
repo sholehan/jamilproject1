@@ -3,7 +3,7 @@
 .style1 {color: #000000}
 -->
 </style>
-<table width="200" style="border:outset" bgcolor="#00FF00">
+<table width="200" style="border:inherit" bgcolor="#00FF00" border="0">
   <tr>
     <th scope="row">Selamat datang</th>
   </tr>
