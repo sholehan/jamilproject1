@@ -15,7 +15,6 @@ function index()
 {
 	$this->form_validation->set_rules('type', 'Type', 'required');
 	$this->form_validation->set_rules('nopol', 'Nomor Polisi', 'required');
-	$this->form_validation->set_rules('in', 'Jam Masuk', 'required');
 
 	
 //int mktime ([ int $hour = date("H") [, int $minute = date("i") [, int $second = date("s") [, int $month = date("n") [, int $day = date("j") [, int $year = date("Y") [, int $is_dst = -1 ]]]]]]] );
@@ -24,7 +23,7 @@ function index()
 	if ($this->form_validation->run() == FALSE)
 		{
 
-
+	$data['out'] = $this->session->userdata('jam_masuk');
 	$data['username'] = $this->session->userdata('username');
 	$data['username'] = $this->session->userdata('username');
 	$data['query'] = $this->Adm_model->getAdm('list',FALSE);		//$per_page,$offset
@@ -66,8 +65,21 @@ function index()
 	}
 	else
 	{
+	
+    $timeZone = 'Asia/jakarta';  // +2 hours
+    date_default_timezone_set($timeZone);
+   
+    $dateSrc = 'GMT+7:00';
+    $dateTime = new DateTime($dateSrc);
+   
+    //echo 'date(): '.date('H:i:s', strtotime($dateSrc));
+    // correct! date(): 14:50:00
+   
+    echo ''.$dateTime->format('H:i:s');
+    // INCORRECT! DateTime::format(): 12:50:00 
+	
 	$data=array('nopol'=>$this->input->post('nopol'),
-				//('jam_masuk'=>($this->input->post('in'),
+				'jam_masuk'=>$dateTime->format('H:i:s'),
 					'type'=>$this->input->post('type')
 					);
 		$this->Adm_model->addAdm($data);
@@ -77,16 +89,45 @@ function index()
 }
 	function out()
 	{
+	$data['query'] = $this->Adm_model->getAdm('list',FALSE);
+	$hour_one = /*$this->db->where('jam_masuk',$id)*/;
+	$hour_two =$TimeOut /*$this->db->where('jam_keluar',$id)*/;
+	$h =  strtotime($hour_one);
+	$h2 = strtotime($hour_two);
+
+	$minute = date("i", $h2);
+	$second = date("s", $h2);
+	$hour = date("H", $h2);
+
+	$convert = strtotime("+$minute minutes", $h);
+	$convert = strtotime("+$second seconds", $convert);
+	$convert = strtotime("+$hour hours", $convert);
+	$new_time = date('H:i:s', $convert);
+
+	//echo $new_time;
+	$start_date = strtotime($dateSrc);
+	$end_date = strtotime("20:00:00");
+	$ajavahe = $end_date - $start_date;
+	$time_between = gmstrftime('%H: %M: %S:', $ajavahe);
+	
+	
+	$id_parkir = $this->uri->segment(3);
 	$timeZone = 'Asia/jakarta';  // +2 hours
     date_default_timezone_set($timeZone);
    
     $dateSrc = 'GMT+7:00';
-    $TimeOut = new DateTime($dateSrc);
+   	$TimeOut = new DateTime($dateSrc);
    
-    //echo 'date(): '.date('H:i:s', strtotime($dateSrc));
+   //echo 'date(): '.date('H:i:s', strtotime($dateSrc));
     // correct! date(): 14:50:00
    
-    echo ''.$TimeOut->format('H:i:s');
+   echo ''.$TimeOut->format('H:i:s');
+   //if(!empty $data('out') and ('cek');
+	$data=array('jam_keluar'=>$TimeOut->format('H:i:s'),
+				'lama_parkir'=>$new_time);
+	$this->Adm_model->editAdm($id_parkir,$data);
+		redirect('administrasi');
     // INCORRECT! DateTime::format(): 12:50:00 
+	
 	}	
 }
