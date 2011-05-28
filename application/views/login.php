@@ -10,14 +10,14 @@
     <td colspan="3" class="lg_banner"><strong><span class="style1">Login to use</span></td>
     </tr>
   <tr class="lg_login">
-    <td width="69"><font size="4" color="#0000FF" style="font:'Comic Sans MS'">Username</font></td>
-    <td width="3"><font size="4" color="#0000FF" style="font:'Comic Sans MS'">:</font></td>
-    <td width="108"><input type="text" name="username"  size="18" /></td>
+    <td width="69"><font size="-1" color="#0000FF" style="font:'Comic Sans MS'">Username</font></td>
+    <td width="3"><font size="-1" color="#0000FF" style="font:'Comic Sans MS'">:</font></td>
+    <td width="108"><input type="text" name="username"  size="15" /></td>
   </tr>
   <tr>  
-    <td><font size="4" color="#0000FF" style="font:'Comic Sans MS'">Password</font></td>
-    <td><font size="4" color="#0000FF" style="font:'Comic Sans MS'">:</font></td>
-    <td><input type="password" name="password" size="18" /></td>
+    <td><font size="-1" color="#0000FF" style="font:'Comic Sans MS'">Password</font></td>
+    <td><font size="-1" color="#0000FF" style="font:'Comic Sans MS'">:</font></td>
+    <td><input type="password" name="password" size="15" /></td>
   </tr>
   <tr>
     <td>&nbsp;</td>

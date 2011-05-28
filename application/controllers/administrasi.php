@@ -8,11 +8,10 @@ class Administrasi extends CI_Controller {
 
 	$this->load->library('session');
 	$this->load->model('Adm_model');
-	
 	}
 
-function index()
-{
+	function index()
+	{
 	$this->form_validation->set_rules('type', 'Type', 'required');
 	$this->form_validation->set_rules('nopol', 'Nomor Polisi', 'required');
 
@@ -20,12 +19,12 @@ function index()
 //int mktime ([ int $hour = date("H") [, int $minute = date("i") [, int $second = date("s") [, int $month = date("n") [, int $day = date("j") [, int $year = date("Y") [, int $is_dst = -1 ]]]]]]] );
 
 
-	if ($this->form_validation->run() == FALSE)
+		if ($this->form_validation->run() == FALSE)
 		{
 
-	$data['out'] = $this->session->userdata('jam_masuk');
-	$data['username'] = $this->session->userdata('username');
-	$data['query'] = $this->Adm_model->getAdm('list',FALSE);		//$per_page,$offset
+		$data['out'] = $this->session->userdata('jam_masuk');
+		$data['username'] = $this->session->userdata('username');
+		$data['query'] = $this->Adm_model->getAdm('list',FALSE);		//$per_page,$offset
 	//$data['urutan']$this->uri->segment(3);
 	
 	//$config['base_url']=$this->config->site_url().'/mahasiswa/index';
@@ -35,7 +34,6 @@ function index()
 	//$this->pagination->initialize($config)
 	//	$this->load->view('index',$data);
 	
-	{
 	if (!empty($data['username']))
 	{		
 			//menampilkan update view
@@ -87,7 +85,7 @@ function index()
 		redirect('administrasi');
 	}		
 
-}
+	}
 	function out()
 	{
 	$data['jam_keluar'] = $this->session->userdata('jam_keluar');

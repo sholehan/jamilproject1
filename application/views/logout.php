@@ -17,3 +17,4 @@
     <th scope="row"><a href="<?php echo base_url()?>home/doLogout" class="style1">LogOut</a></th>
   </tr>
 </table>
+<br />
