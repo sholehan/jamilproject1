@@ -84,6 +84,7 @@ function edit()
 		{
 		$data['menu'] = "menuAdmin.php";
 		$data['slide_view'] = "logout.php";
+		$data['slide_view2'] = "viewRegister.php";
 		$data['usernama'] = $this->session->userdata('user_display');
 
 			$id = $this->uri->segment(3); // ndapetin segmen ke tiga dari url diitung dr base_urlnya/url utama yaitu /parkir/
