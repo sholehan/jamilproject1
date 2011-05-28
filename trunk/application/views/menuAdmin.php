@@ -1,7 +1,9 @@
 <style type="text/css">
 <!--
 .style2 {color: #FF0000}
-.style3 {color: #FFFFFF}
+.style4 {color: #FF0000; font-family: "comic Sans MS"; }
+.style5 {font-weight: bold}
+.style6 {color: #FF0000; font-family: "comic Sans MS"; font-weight: bold; }
 -->
 </style>
   <table width="1095" height="158" border="0" cellpadding="5">
@@ -14,7 +16,9 @@
 		<a href="<?php echo base_url()?>home.php" class="style5"><strong><span class="style2">Home</span></strong></a>&nbsp;
 		<a href="<?php echo base_url()?>profile.php" class="style5"><strong><span class="style2">Profile</span></strong></a>&nbsp;
 		<a href="<?php echo base_url()?>administrasi.php" class="style5"><strong><span class="style2">Kolom Kerja</span></strong></a>&nbsp;
+		<a href="<?php echo base_url()?>"><strong><span class="style6">Data Keluar</span></strong></a>&nbsp;
 		<a href="<?php echo base_url()?>user.php" class="style5"><strong><span class="style2">Data User</span></strong></a></td>
+
       </td>
 		      </tr>
     </table></td>

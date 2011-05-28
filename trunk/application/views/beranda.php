@@ -1,13 +1,9 @@
- <label>
-<font size="+6" color="#0000FF" face="Comic Sans MS">Welcome In Parkir OnLine.Com</font>
+<h1 align="center"><font size="+6" color="#0000FF" face="Comic Sans MS"> Welcome to <br />Parkir OnLine.Com</font></h1>
  <br />
 <br />
 <br />
-<form id="form1" name="form1" method="post" action="">
-  <label>
-  <textarea name="textarea" cols="50" rows="5" readonly="readonly" style="background:#FFFF00" style="font face:'Comic Sans MS'" style="font color:#0000FF">Kami adalah Organisasi kecil yang merintis mengikuti perkembngan Ilmu Pengetahun dan Teknologi dan juga kebutuhan tuntutan era modernisasai yang emenginginkan kemudahan dalam setiap akivitasnya, untuk itu kami menciptakan sebuah sistem parkir yang praktis (berbasis web) yang dapat membantu kebutuhan perusahaan yang mengingainkan hal tersebut</textarea>
-  </label>
-</form>
+<table border="0" cellpadding="5"><tr align="justify"><td>
+<!--<img src="<?php echo base_url();?>assets/parkir.jpg" border="1"/>--><font style="list-style-position:inside" size="-1">Parkir OnLine merupakan aplikasi berbasis web yang sengaja di ciptakan untuk mempermudah suatu lembaga atau instansi untuk mengatur parkir baik untuk tamu maupun pegawai. Dengan fasilitas yang sengaja tersedia di dalamnya dapat memudahkan bagi pengguna aplikasi ini untuk mengatur masuk dan keluarnya kendaraan secara mudah</font></td></tr></table>
 <br />
 <br />
 

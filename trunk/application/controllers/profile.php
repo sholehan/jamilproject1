@@ -22,6 +22,9 @@ class Profile extends CI_Controller {
 	$data['slide_view'] = "logout.php";
 	$data['menu'] = "menuAdmin.php";
 	$data['main_view'] = "home.php";
+	$data['slide_view2'] = "viewRegister.php";
+	$data['slide_view3'] = "viewkomen.php";
+
 	}
 			
 	else
@@ -29,6 +32,9 @@ class Profile extends CI_Controller {
 			//menampilkan halaman login
 	$data['slide_view'] = "login.php";
 	$data['menu'] = "menu.php";
+	$data['slide_view3'] = "viewkomen.php";
+	$data['slide_view2'] = "viewRegister.php";
+
 	}
 	
 	

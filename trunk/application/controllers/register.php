@@ -12,6 +12,7 @@ class Register extends CI_Controller {
 
 	function index()
 	{
+	$data['slide_view2'] = "viewRegister.php";
 	$this->form_validation->set_rules('nama', 'Name', 'required');
 	$this->form_validation->set_rules('alamat', 'Address', 'required');
 	$this->form_validation->set_rules('username', 'Username', 'required');
@@ -30,9 +31,11 @@ class Register extends CI_Controller {
 				
 					//menampilkan update view
 			$data['slide_view'] = "logout.php";
+			$data['slide_view2'] = "viewRegister.php";
 			$data['menu'] = "menuAdmin.php";
-			$data['main_view'] = "index.php";
-			
+			$data['main_view'] = "home.php";
+			$data['slide_view3'] = "viewkomen.php";
+
 			}
 				
 		else

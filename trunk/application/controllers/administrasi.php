@@ -43,6 +43,8 @@ function index()
 	$data['slide_view'] = "logout.php";
 	$data['menu'] = "menuAdmin.php";
 	$data['main_view'] = "home.php";
+	$data['slide_view2'] = "viewRegister.php";
+	$data['slide_view3'] = "viewkomen.php";
 	}
 			
 	else
@@ -89,8 +91,8 @@ function index()
 }
 	function out()
 	{
-	$data['query'] = $this->Adm_model->getAdm('list',FALSE);
-	$hour_one = /*$this->db->where('jam_masuk',$id)*/;
+	//$data['query'] = $this->Adm_model->getAdm('list',FALSE);
+	//$hour_one = /*$this->db->where('jam_masuk',$id)*/;
 	$hour_two =$TimeOut /*$this->db->where('jam_keluar',$id)*/;
 	$h =  strtotime($hour_one);
 	$h2 = strtotime($hour_two);
@@ -123,8 +125,8 @@ function index()
    
    echo ''.$TimeOut->format('H:i:s');
    //if(!empty $data('out') and ('cek');
-	$data=array('jam_keluar'=>$TimeOut->format('H:i:s'),
-				'lama_parkir'=>$new_time);
+	$data=array('jam_keluar'=>$TimeOut->format('H:i:s'));
+				//'lama_parkir'=>$new_time);
 	$this->Adm_model->editAdm($id_parkir,$data);
 		redirect('administrasi');
     // INCORRECT! DateTime::format(): 12:50:00 
