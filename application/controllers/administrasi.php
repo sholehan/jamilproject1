@@ -91,9 +91,8 @@ function index()
 }
 	function out()
 	{
-	//$data['query'] = $this->Adm_model->getAdm('list',FALSE);
-	//$hour_one = /*$this->db->where('jam_masuk',$id)*/;
-	$hour_two =$TimeOut /*$this->db->where('jam_keluar',$id)*/;
+	$hour_one = $data['query'] = $this->db->where('jam_keluar',$id);
+	$hour_two =	$data['query'] = $this->db->where('jam_masuk',$id)/*$this->db->where('jam_keluar',$id)*/;
 	$h =  strtotime($hour_one);
 	$h2 = strtotime($hour_two);
 
@@ -105,12 +104,18 @@ function index()
 	$convert = strtotime("+$second seconds", $convert);
 	$convert = strtotime("+$hour hours", $convert);
 	$new_time = date('H:i:s', $convert);
-
+	$bayar = if ($new_time <= 1){ echo '1000';}
+			elseif ($new_time <=2) {echo '2000';}
+			elseif ($new_time <=5) {echo '5000';}
+			else
+			$data['query'] = $this->db->where('lama_parkir',$id);
+			$jml = $new_time * $query;
+			echo $jml;
 	//echo $new_time;
-	$start_date = strtotime($dateSrc);
+	/*$start_date = strtotime($dateSrc);
 	$end_date = strtotime("20:00:00");
 	$ajavahe = $end_date - $start_date;
-	$time_between = gmstrftime('%H: %M: %S:', $ajavahe);
+	$time_between = gmstrftime('%H: %M: %S:', $ajavahe);*/
 	
 	
 	$id_parkir = $this->uri->segment(3);
@@ -125,11 +130,29 @@ function index()
    
    echo ''.$TimeOut->format('H:i:s');
    //if(!empty $data('out') and ('cek');
-	$data=array('jam_keluar'=>$TimeOut->format('H:i:s'));
-				//'lama_parkir'=>$new_time);
+   
+   	$data=array('jam_keluar'=>$TimeOut->format('H:i:s'),
+				'biaya'=>$jml,
+					'lama_parkir'=>$new_time);
+				//echo $row['status'];
 	$this->Adm_model->editAdm($id_parkir,$data);
 		redirect('administrasi');
     // INCORRECT! DateTime::format(): 12:50:00 
 	
 	}	
-}
+	function bayar($query=FALSE,$id=FALSE)	//$limit=FALSE,$offset=FALSE
+	{
+		if($query=='list')
+		{
+			//$this->db->limit($limit,$offset);
+			$qr = $this->db->get('tb_parkir');
+			$result=$qr->result_array();
+			return $result;
+		}
+		elseif ($query=='by_id_parkir')
+		{
+			//$this->db->limit($limit,$offset)
+			$this->db->where('id_parkir',$id);
+			return $this->db->get('tb_parkir')->row();
+		}
+}}

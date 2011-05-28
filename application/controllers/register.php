@@ -34,7 +34,7 @@ class Register extends CI_Controller {
 			$data['slide_view2'] = "viewRegister.php";
 			$data['menu'] = "menuAdmin.php";
 			$data['main_view'] = "home.php";
-			$data['slide_view3'] = "viewkomen.php";
+			//$data['slide_view3'] = "viewkomen.php";
 
 			}
 				
@@ -43,6 +43,7 @@ class Register extends CI_Controller {
 					//menampilkan halaman login
 			$data['slide_view'] = "login.php";
 			$data['menu'] = "menu.php";
+			$data['main_view'] = "home.php";
 			}
 			
 		$data['title'] = 'register';
@@ -63,7 +64,7 @@ class Register extends CI_Controller {
 					'alamat'=>$this->input->post('alamat')
 					);
 		$this->Register_model->addUser($data);
-		redirect('user');
+		redirect('home');
 			}
 	}
 	

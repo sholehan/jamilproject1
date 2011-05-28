@@ -16,7 +16,7 @@
 		<a href="<?php echo base_url()?>home.php" class="style5"><strong><span class="style2">Home</span></strong></a>&nbsp;
 		<a href="<?php echo base_url()?>profile.php" class="style5"><strong><span class="style2">Profile</span></strong></a>&nbsp;
 		<a href="<?php echo base_url()?>administrasi.php" class="style5"><strong><span class="style2">Kolom Kerja</span></strong></a>&nbsp;
-		<a href="<?php echo base_url()?>"><strong><span class="style6">Data Keluar</span></strong></a>&nbsp;
+		<!--<a href="<?php echo base_url()?>"><strong><span class="style6">Data Keluar</span></strong></a>&nbsp;-->
 		<a href="<?php echo base_url()?>user.php" class="style5"><strong><span class="style2">Data User</span></strong></a></td>
 
       </td>

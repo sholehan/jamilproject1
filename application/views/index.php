@@ -52,15 +52,13 @@ $today = date("D,  F, j - Y"); echo $today;?></font><br />
     <td height="181" valign="top" bgcolor="#FFFFFF"><div align="center" >
       <?php $this->load->view($slide_view2)?>
   </tr>
-  <tr>
-    <td height="178" align="center" valign="top" bgcolor="#3300FF">
-	<?php $this->load->view($slide_view3)?>
-	</td>
-  </tr>
-  <tr>
+<tr>
+    <td></td>
+	  </tr>
+  <!--<tr>
     <td height="174" align="center" valign="top" bgcolor="#FFFF00"><p><strong><span class="style2">Do you want to make a reklame?</span></strong></p>
     <p><strong><span class="style3"><a href="">Click Here</a> </span></strong></p></td>
-  </tr>
+  </tr>-->
 </table>
 
 </td>
