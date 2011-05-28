@@ -41,6 +41,10 @@ function index()
 	$data['slide_view'] = "logout.php";
 	$data['menu'] = "menuAdmin.php";
 	$data['main_view'] = "Vuser.php";
+	$data['slide_view2'] = "viewRegister.php";
+	$data['slide_view3'] = "viewkomen.php";
+
+	
 	}
 			
 	else

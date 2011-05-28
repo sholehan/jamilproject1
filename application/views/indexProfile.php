@@ -1,6 +1,7 @@
 <h1>PROFILE</h1>
 
-<?php
+<p>
+<!--  <?php
 //untuk menampilkan waktu timezone lokal
 
     $timeZone = 'Asia/jakarta';  // +2 hours
@@ -24,11 +25,11 @@ $time_between = gmstrftime('%H: %M: %S:', $ajavahe); //gmstrftime() deals with d
 //$jumlah = date_sunset(
 echo "<br/>";
 echo 'You have worked: '.$time_between;
-?>
-
-<br />
-
-<?php
+?>-->
+  <!--
+  <br />
+  
+  <?php
 //untuk menjumlah waktu
 $hour_one = "01:20:20";
 $hour_two = "05:50:20";
@@ -63,9 +64,10 @@ $kom= strtotime("+$minute minutes", $h);
 	echo $kom;
 	echo "<br />";
 echo $new_time;
-?> 
-<br /><br />
-<!--<?php
+?> -->
+  <br />
+  <br />
+  <!--<?php
 
 //untuk pengulangan hari yang sama dengan minggu2 kedepan atau sebelumnya
 function nextWeeksDay($date_begin,$nbrweek)
@@ -88,8 +90,9 @@ for($i = 1; $i <= $nbrweek; $i++)  {
 echo '<br> - '.$result[$i];
 }
 ?> -->
-<br /><br />
-<?php
+  <br />
+  <br />
+<!--  <?php
 //untuk menambah waktu
 date_default_timezone_set('Asia/jakarta');
 $dateSrc = 'GMT+7:00';
@@ -105,10 +108,10 @@ print date('H:i:s', $tomorrow);
 $today = '15:30:50';
 $tomorrow = strtotime('+1 ', strtotime($today));
 print time('H-s-i', $tomorrow);
-?>
-<br />
-<br />
-<?php
+?>-->
+  <br />
+  <br />
+<!--  <?php
   /**
    *
    *  Gets the first weekday of that month and year
@@ -132,9 +135,10 @@ print time('H-s-i', $tomorrow);
 
 // this will output the first wednesday of january 2007 (wed 03-01-2007)
 echo strftime("%a %d-%m-%Y", get_first_day(3, 1, 2007));
-?>
-<br /><br />
-<?php
+?>-->
+  <br />
+  <br />
+<!--  <?php
 
 /* calculate the sunset time for Lisbon, Portugal
 Latitude: 38.4 North
@@ -144,3 +148,5 @@ offset: +1 GMT
 */
 
 echo date("D M d Y"). ', sunset time : ' .date_sunset(time(), SUNFUNCS_RET_STRING, 38.4, -9, 90, 1);
+?>
+-->

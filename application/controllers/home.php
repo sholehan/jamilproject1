@@ -14,6 +14,9 @@ class Home extends CI_Controller {
 	$data['id_user'] = $this->session->userdata('id_user');
 	$data['username'] = $this->session->userdata('username');
 	$data['slide_view']	 = "login.php";	
+	$data['slide_view2'] = "viewRegister.php";
+	$data['slide_view3'] = "viewKomen.php";
+
 	if (!empty($data['username']))
 	{
 			

@@ -12,6 +12,7 @@ class Komen extends CI_Controller {
 
 	function index()
 	{
+	$data['slide_view2'] = "viewRegister.php";
 	$this->form_validation->set_rules('nama', 'Name', 'required');
 	$this->form_validation->set_rules('alamat', 'Address', 'required');
 	$this->form_validation->set_rules('email', 'E Mail', 'required');
@@ -28,7 +29,9 @@ class Komen extends CI_Controller {
 					//menampilkan update view
 			$data['slide_view'] = "logout.php";
 			$data['menu'] = "menuAdmin.php";
-			$data['main_view'] = "menuAdmin.php";
+			$data['main_view'] = "home.php";
+			$data['slide_view2'] = "viewRegister.php";
+			$data['slide_view3'] = "viewkomen.php";
 		}
 				
 		else
