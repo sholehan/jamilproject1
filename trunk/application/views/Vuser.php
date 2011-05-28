@@ -12,6 +12,7 @@
   </tr>
    <?php $no=1?>
   <?php foreach ($query as $row){?>
+  
   <tr align="center" bgcolor="#00FFFF">
     <td height="23"><font size="-1" face="Times New Roman"><?php echo $no?></font></td>
     <td><font size="-1" face="Times New Roman"><?php echo $row['nama']?></font></td>
@@ -19,8 +20,8 @@
     <td><font size="-1" face="Times New Roman"><?php echo $row['user_display']?></font></td>
     <td><font size="-1" face="Times New Roman"><?php echo $row['email']?></font></td>
     <td><font size="-1" face="Times New Roman"><?php echo $row['alamat']?></font></td>
-	<td>	<a href="<?php echo base_url().'user/edit/'.$row['no']?>"><font size="-1" face="Times New Roman">Edit</font></a>
-	 <!--  <a href="<?php echo base_url().'user/delete/'.$row['no']?>"><font size="-1" face="Times New Roman">Hapus</font></a>--></td>
+	<td><a href="<?php echo base_url().'user/edit/'.$row['no']?>"><font size="-1" face="Times New Roman">Edit</font></a>
+	 <a href="<?php echo base_url().'user/delete/'.$row['no']?>"><font size="-1" face="Times New Roman">Hapus</font></a></td>
   </tr>
-  <?php $no++; }?>
+    <?php $no++; }?>
 </table>
