@@ -2,7 +2,7 @@
 
 class Administrasi extends CI_Controller {
 
-	function __construct()
+	function __construct() 
 	{
 		parent:: __construct();
 
@@ -25,7 +25,6 @@ function index()
 
 	$data['out'] = $this->session->userdata('jam_masuk');
 	$data['username'] = $this->session->userdata('username');
-	$data['username'] = $this->session->userdata('username');
 	$data['query'] = $this->Adm_model->getAdm('list',FALSE);		//$per_page,$offset
 	//$data['urutan']$this->uri->segment(3);
 	
@@ -36,63 +35,68 @@ function index()
 	//$this->pagination->initialize($config)
 	//	$this->load->view('index',$data);
 	
-	if (!empty($data['username']))
 	{
-			
+	if (!empty($data['username']))
+	{		
 			//menampilkan update view
 	$data['slide_view'] = "logout.php";
 	$data['menu'] = "menuAdmin.php";
 	$data['main_view'] = "home.php";
 	$data['slide_view2'] = "viewRegister.php";
-	$data['slide_view3'] = "viewkomen.php";
-	}
+	//$data['slide_view3'] = "viewkomen.php";
+		}
 			
 	else
-	{
+		{
 			//menampilkan halaman login
-	$data['slide_view'] = "login.php";
-	$data['menu'] = "menu.php";
-	
+		$data['slide_view'] = "login.php";
+		$data['menu'] = "menu.php";
+		$data['main_view'] = "home.php";
 	//$data['user'] = $this->session->userdata('username');
-	}
+		}
 		
-	$data['title'] = 'administrasi';
-	$data['usernama'] = $this->session->userdata('user_display');
-	$data['main_view'] = 'indexAdm.php';
-	$data['menu'] = "menuAdmin.php";
-	$data['slide_view'] = "logout.php";
-	$data['data'] = 'Vuser.php';
-	$this->load->view('index.php',$data);
-
-	}
-	else
-	{
+		$data['title'] = 'administrasi';
+		$data['usernama'] = $this->session->userdata('user_display');
+		$data['main_view'] = 'indexAdm.php';
+		$data['menu'] = "menuAdmin.php";
+		$data['slide_view'] = "logout.php";
+		$data['data'] = "Vuser.php";
+		$this->load->view('index.php',$data);
+		}
 	
-    $timeZone = 'Asia/jakarta';  // +2 hours
-    date_default_timezone_set($timeZone);
+	else
+		{
+		
+		
+		$timeZone = 'Asia/jakarta';
+  	 	date_default_timezone_set($timeZone);
    
-    $dateSrc = 'GMT+7:00';
-    $dateTime = new DateTime($dateSrc);
+		$dateSrc = 'GMT+7:00';
+		$dateTime = new DateTime($dateSrc);
    
     //echo 'date(): '.date('H:i:s', strtotime($dateSrc));
     // correct! date(): 14:50:00
    
-    echo ''.$dateTime->format('H:i:s');
+    //echo ''.$dateTime->format('H:i:s');
     // INCORRECT! DateTime::format(): 12:50:00 
 	
 	$data=array('nopol'=>$this->input->post('nopol'),
 				'jam_masuk'=>$dateTime->format('H:i:s'),
-					'type'=>$this->input->post('type')
-					);
+					'type'=>$this->input->post('type'));
 		$this->Adm_model->addAdm($data);
 		redirect('administrasi');
-		
-	}
+	}		
+
 }
 	function out()
 	{
-	$hour_one = $data['query'] = $this->db->where('jam_keluar',$id);
-	$hour_two =	$data['query'] = $this->db->where('jam_masuk',$id)/*$this->db->where('jam_keluar',$id)*/;
+	$data['jam_keluar'] = $this->session->userdata('jam_keluar');
+	$id_parkir = $this->uri->segment(3);
+	$qr=$this->db->query("select jam_keluar, jam_masuk from tb_parkir where id_parkir=$id_parkir");
+	$row=$qr->row();
+	$hour_one = $row->jam_masuk;
+	$hour_two =	$row->jam_keluar;
+	
 	$h =  strtotime($hour_one);
 	$h2 = strtotime($hour_two);
 
@@ -104,14 +108,11 @@ function index()
 	$convert = strtotime("+$second seconds", $convert);
 	$convert = strtotime("+$hour hours", $convert);
 	$new_time = date('H:i:s', $convert);
-	$bayar = if ($new_time <= 1){ echo '1000';}
-			elseif ($new_time <=2) {echo '2000';}
-			elseif ($new_time <=5) {echo '5000';}
-			else
-			$data['query'] = $this->db->where('lama_parkir',$id);
-			$jml = $new_time * $query;
-			echo $jml;
-	//echo $new_time;
+	
+	$h3= $h2 - $h;
+	$h4 = $h3 / 3600;
+	$lama = ($hour_two - $hour_one) * 1000;
+	echo $new_time;
 	/*$start_date = strtotime($dateSrc);
 	$end_date = strtotime("20:00:00");
 	$ajavahe = $end_date - $start_date;
@@ -132,27 +133,14 @@ function index()
    //if(!empty $data('out') and ('cek');
    
    	$data=array('jam_keluar'=>$TimeOut->format('H:i:s'),
-				'biaya'=>$jml,
-					'lama_parkir'=>$new_time);
+				'biaya'=>$lama,
+					'lama_parkir'=>$h4);
 				//echo $row['status'];
 	$this->Adm_model->editAdm($id_parkir,$data);
 		redirect('administrasi');
     // INCORRECT! DateTime::format(): 12:50:00 
 	
 	}	
-	function bayar($query=FALSE,$id=FALSE)	//$limit=FALSE,$offset=FALSE
-	{
-		if($query=='list')
-		{
-			//$this->db->limit($limit,$offset);
-			$qr = $this->db->get('tb_parkir');
-			$result=$qr->result_array();
-			return $result;
-		}
-		elseif ($query=='by_id_parkir')
-		{
-			//$this->db->limit($limit,$offset)
-			$this->db->where('id_parkir',$id);
-			return $this->db->get('tb_parkir')->row();
-		}
-}}
+			
+}
+
