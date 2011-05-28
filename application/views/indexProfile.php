@@ -1,7 +1,7 @@
 <h1>PROFILE</h1>
 
 <p>
-<!--  <?php
+  <?php
 //untuk menampilkan waktu timezone lokal
 
     $timeZone = 'Asia/jakarta';  // +2 hours
@@ -25,14 +25,14 @@ $time_between = gmstrftime('%H: %M: %S:', $ajavahe); //gmstrftime() deals with d
 //$jumlah = date_sunset(
 echo "<br/>";
 echo 'You have worked: '.$time_between;
-?>-->
-  <!--
+?>
+  
   <br />
   
   <?php
 //untuk menjumlah waktu
-$hour_one = "01:20:20";
-$hour_two = "05:50:20";
+$hour_one = "01:00:00";
+$hour_two = "01:30:00";
 $h =  strtotime($hour_one);
 $h2 = strtotime($hour_two);
 $h3= $h2 - $h;
@@ -64,7 +64,7 @@ $kom= strtotime("+$minute minutes", $h);
 	echo $kom;
 	echo "<br />";
 echo $new_time;
-?> -->
+?> 
   <br />
   <br />
   <!--<?php
@@ -150,7 +150,8 @@ offset: +1 GMT
 echo date("D M d Y"). ', sunset time : ' .date_sunset(time(), SUNFUNCS_RET_STRING, 38.4, -9, 90, 1);
 ?>
 -->
-<?php 
+<!--<?php 
 $config['display_pages'] = TRUE; 
 echo $config;
-?>
+?>-->
+
