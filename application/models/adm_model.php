@@ -20,6 +20,10 @@ class Adm_model extends CI_Model {
 			$this->db->where('id_parkir',$id);
 			return $this->db->get('tb_parkir')->row();
 		}
+		elseif ($query=='by_waktu')
+		{
+			return $this->db->get('tb_parkir')->result_array();
+		}
 	}
 	function addAdm($data)
 	{
