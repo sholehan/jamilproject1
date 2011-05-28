@@ -22,7 +22,7 @@ function index()
 		{*/
 
 
-	$data['username'] = $this->session->userdata('username');
+	$data['status'] = $this->session->userdata('status');
 	$data['username'] = $this->session->userdata('username');
 	$data['query'] = $this->User_model->getUser('list',FALSE);		//$per_page,$offset
 	//$data['urutan']$this->uri->segment(3);
@@ -42,11 +42,18 @@ function index()
 	$data['menu'] = "menuAdmin.php";
 	$data['main_view'] = "Vuser.php";
 	$data['slide_view2'] = "viewRegister.php";
-	$data['slide_view3'] = "viewkomen.php";
+	//$data['slide_view3'] = "viewkomen.php";
 
 	
 	}
-			
+	elseif (!empty($data['status']))
+	{
+	$data['slide_view'] = "logout.php";
+	$data['menu'] = "menuAdmin.php";
+	$data['main_view'] = "Vadmin.php";
+	$data['slide_view2'] = "viewRegister.php";
+	
+	}	
 	else
 	{
 			//menampilkan halaman login

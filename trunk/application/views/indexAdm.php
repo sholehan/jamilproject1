@@ -41,9 +41,9 @@
 <table width="590" height="50" border="1" style="border:solid" bordercolor="#0000FF">
   <tr bgcolor="#FFFF00" bordercolor="#FF0000" >
     <td width="21" align="center" ><strong><font color="#0000FF" size="-1">No</font></strong></td>
-  	<td width="82" align="center"><strong><font color="#0000FF" size="-1">Nopol</font></strong></td>
-    <td width="47" align="center"><strong><font color="#0000FF" size="-1">Type</font></strong></td>
-    <td width="105" align="center"><strong><font color="#0000FF" size="-1">Jam Masuk</font></strong></td>
+  	<td width="96" align="center"><strong><font color="#0000FF" size="-1">Nopol</font></strong></td>
+    <td width="40" align="center"><strong><font color="#0000FF" size="-1">Type</font></strong></td>
+    <td width="98" align="center"><strong><font color="#0000FF" size="-1">Jam Masuk</font></strong></td>
     <td width="120" align="center"><strong><font color="#0000FF" size="-1">Jam Keluar</font></strong></td>
     <td width="52" align="center"><strong><font color="#0000FF" size="-1">Lama Parkir</font></strong></td>
     <td width="69" align="center"><strong><font color="#0000FF" size="-1">Biaya</font></strong></td>
