@@ -33,25 +33,24 @@ background-color:#000000;
 <?php $this->load->view($menu)?>
   <table width="1109" height="725" border="0">
   <tr>
-    <th width="20" rowspan="4" bgcolor="#FFFFFF" scope="row" valign="middle" style="border:solid"><p></p><a href="" style="border-color:#FF0000"><img src="<?php echo base_url()?>assets/51854910.jpg" alt="bola" width="233" height="163" align=""/></a><p></p>
+    <th width="20" rowspan="3" bgcolor="#FFFFFF" scope="row" valign="middle" style="border:solid"><p></p><a href="" style="border-color:#FF0000"><img src="<?php echo base_url()?>assets/51854910.jpg" alt="bola" width="233" height="163" align=""/></a><p></p>
       <p></p>
       <a href=""><img src="<?php echo base_url()?>assets/474012.JPG" alt="balap" width="233" height="163" /></a><p></p><a href=""><img src="<?php echo base_url()?>assets/911Turbo.jpg" alt="elegant" width="233" height="163"></a><p></p><a href="" ><img src="<?php echo base_url()?>assets/550sypder.jpg" alt="modivy" width="233" height="163"></a></p></th>
-    <td width="700" rowspan="4" bgcolor="#00FFFF" valign="top" bordercolor="#FFFF00" style="border">
+    <td width="700" rowspan="3" bgcolor="#00FFFF" valign="top" bordercolor="#FFFF00">
 	<div  id="main">
 &nbsp; <?php $this->load->view($main_view)?></div> </td>
-    <td width="197" height="180" valign="top" bgcolor="#FFFFFF" ><div align="center"><font color="#0000FF" ><?php
+    <td width="197" valign="top" bgcolor="#FFFFFF"><font color="#0000FF"><?php
 // Assuming today is March 10th, 2001, 5:16:18 pm, and that we are in the
 // Mountain Standard Time (MST) Time Zone
 
-$today = date("D,  F, j - Y"); echo $today;?></font><br />
+$today = date("D, \\o\\n F, j - Y"); echo $today;?></font><br />
       <div id="menu_kanan" >
 	 <br/><?php $this->load->view($slide_view)?></div>
-</div></td>
+</div>
+<div align="center" >
+      <?php $this->load->view($slide_view2)?>  </td>
 </tr>
-  <tr>
-    <td height="181" valign="top" bgcolor="#FFFFFF"><div align="center" >
-      <?php $this->load->view($slide_view2)?>
-  </tr>
+  
 <tr>
     <td></td>
 	  </tr>
